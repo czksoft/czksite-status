@@ -17,11 +17,11 @@ const Header = observer(({ getSiteData }) => {
 
   // 状态文本
   const statusNames = {
-    loading: "站点状态加载中",
-    error: "部分站点出现异常",
-    allError: "全部站点出现异常",
-    normal: "所有站点运行正常",
-    wrong: "数据请求失败",
+    loading: "正在加载哩，再等等",
+    error: "部分站点罢工了",
+    allError: "所有站点都迷路了",
+    normal: "太棒了，站点全部正常",
+    wrong: "数据好像走丢了",
   };
 
   // 刷新状态
@@ -31,7 +31,7 @@ const Header = observer(({ getSiteData }) => {
       messageApi.open({
         key: "updata",
         type: "warning",
-        content: "请稍后再尝试刷新",
+        content: "当前无法使用，请稍后再试吧",
       });
       return false;
     }
@@ -72,7 +72,7 @@ const Header = observer(({ getSiteData }) => {
                   timeout={300}
                 >
                   {status.siteState === "loading" ? (
-                    <span>数据加载中...</span>
+                    <span>嘿咻嘿咻，正在加载...</span>
                   ) : status.siteState === "wrong" ? (
                     <span>这可能是临时性问题，请刷新后重试</span>
                   ) : (
@@ -110,7 +110,7 @@ const Header = observer(({ getSiteData }) => {
                   </div>
                   <div className="status-num">
                     <div className="ok-count">
-                      <span className="name">正常</span>
+                      <span className="name">工作中</span>
                       <CountUp
                         className="num"
                         end={status.siteOverview.okCount}
@@ -118,7 +118,7 @@ const Header = observer(({ getSiteData }) => {
                       />
                     </div>
                     <div className="down-count">
-                      <span className="name">异常</span>
+                      <span className="name">不在线</span>
                       <span className="num">
                         <CountUp
                           className="num"
@@ -129,7 +129,7 @@ const Header = observer(({ getSiteData }) => {
                     </div>
                     {status.siteOverview?.unknownCount ? (
                       <div className="unknownCount-count">
-                        <span className="name">未知</span>
+                        <span className="name">出错了</span>
                         <span className="num">
                           <CountUp
                             className="num"
