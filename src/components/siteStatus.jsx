@@ -56,7 +56,7 @@ const SiteStatus = ({ siteData, days, status }) => {
                       <div className="icon" />
                       <span className="tip">
                         {site.status === "ok"
-                          ? "正常访问"
+                          ? "网站正常"
                           : site.status === "unknown"
                           ? "状态未知"
                           : "无法访问"}
@@ -79,7 +79,7 @@ const SiteStatus = ({ siteData, days, status }) => {
                         tooltipText = `可用率 ${formatNumber(uptime)}%`;
                       } else if (uptime <= 0 && down.times === 0) {
                         status = "none";
-                        tooltipText = "无数据";
+                        tooltipText = "数据不存在";
                       } else {
                         status = "error";
                         tooltipText = `故障 ${
@@ -142,7 +142,7 @@ const SiteStatus = ({ siteData, days, status }) => {
         ) : (
           <Result
             status="error"
-            title="调用超限或请求错误，请刷新后重试"
+            title="出现了未知问题，请刷新后重试"
             extra={
               <Button
                 type="primary"
