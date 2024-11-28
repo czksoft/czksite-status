@@ -24,7 +24,7 @@ const Footer = () => {
         <p>
           <CustomLink
             text={Package.alia}
-            to="https://github.com/imsyy/site-status"
+            to="https://www.szczk.top/"
           />
           &nbsp;Version&nbsp;{Package.version}
         </p>
@@ -34,13 +34,13 @@ const Footer = () => {
           &nbsp;接口&nbsp;|&nbsp;检测频率 5 分钟
         </p>
         <p>
-          Copyright&nbsp;&copy;&nbsp;2020&nbsp;-&nbsp;{new Date().getFullYear()}
+          Copyright&nbsp;&copy;&nbsp;2024&nbsp;-&nbsp;{new Date().getFullYear()}
           &nbsp;
-          <CustomLink to="https://www.imsyy.top/" text="無名" />
+          <CustomLink to="https://www.szczk.top/" text="czkuptimerobot" />
           {siteIcp ? (
             <React.Fragment>
               &nbsp;|&nbsp;
-              <CustomLink to="https://beian.miit.gov.cn/" text={siteIcp} />
+              <CustomLink to="https://www.szczk.top/" text={siteIcp} />
             </React.Fragment>
           ) : null}
         </p>
